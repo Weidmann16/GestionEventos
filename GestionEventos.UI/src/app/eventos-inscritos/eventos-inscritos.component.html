@@ -1,0 +1,18 @@
+<div class="eventos-inscritos-container">
+  <h1>Eventos en los que Estoy Inscrito</h1>
+
+  <!-- Mensaje cuando no hay eventos inscritos -->
+  <div *ngIf="eventosInscritos.length === 0">
+    <p>No estás inscrito en ningún evento.</p>
+  </div>
+
+  <!-- Lista de eventos inscritos -->
+  <div *ngFor="let evento of eventosInscritos" class="evento-card">
+    <h2>{{ evento.evento.nombreEvento }}</h2>
+    <p>{{ evento.evento.descripcionEvento }}</p>
+    <p><strong>Fecha y Hora:</strong> {{ evento.evento.fechaEvento | date: 'dd/MM/yyyy, HH:mm' }}</p>
+    <p><strong>Ubicación:</strong> {{ evento.evento.ubicacionEvento }}</p>
+    <p><strong>Capacidad:</strong> {{ evento.evento.capacidadEvento }}</p>
+    <p><strong>Estado:</strong> {{ evento.evento.estadoEvento ? 'Activo' : 'Inactivo' }}</p>
+  </div>
+</div>

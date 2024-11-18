@@ -1,0 +1,16 @@
+<div class="app-container">
+  <!-- Sidebar -->
+  <nav class="sidebar" *ngIf="isLoggedIn">
+    <ul>
+      <li><a routerLink="/home" routerLinkActive="active">Inscripcion Eventos</a></li>
+      <li><a routerLink="/mis-eventos" routerLinkActive="active">Mis Eventos</a></li>
+      <li><a routerLink="/eventos-inscritos" routerLinkActive="active">Eventos Inscritos</a></li>
+      <li><button (click)="logout()">Cerrar Sesión</button></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

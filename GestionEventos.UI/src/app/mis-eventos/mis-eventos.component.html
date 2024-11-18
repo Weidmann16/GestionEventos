@@ -1,0 +1,75 @@
+<div class="mis-eventos-container">
+  <h1>Mis Eventos Creados</h1>
+
+  <div *ngIf="eventosCreados.length === 0">
+    <p>No has creado ningún evento.</p>
+  </div>
+
+  <div *ngFor="let evento of eventosCreados" class="evento-card">
+    <!-- Mostrar detalles del evento si no está en modo de edición -->
+    <div *ngIf="eventoEditando?.idEvento !== evento.idEvento">
+      <h2>{{ evento.nombreEvento }}</h2>
+      <p>{{ evento.descripcionEvento }}</p>
+      <p><strong>Fecha y Hora:</strong> {{ evento.fechaEvento | date: 'dd/MM/yyyy, HH:mm' }}</p>
+      <p><strong>Ubicación:</strong> {{ evento.ubicacionEvento }}</p>
+      <p><strong>Capacidad:</strong> {{ evento.capacidadEvento }}</p>
+      <p><strong>Asistentes:</strong> {{ evento.asistentesEvento }}</p>
+      <p><strong>Estado:</strong> {{ evento.estadoEvento ? 'Activo' : 'Inactivo' }}</p>
+      <button (click)="habilitarEdicion(evento)">Editar</button>
+      <button (click)="eliminarEvento(evento.idEvento, evento.asistentesEvento)">Eliminar</button>
+    </div>
+
+    <!-- Formulario de edición -->
+    <div *ngIf="eventoEditando?.idEvento === evento.idEvento">
+      <h2>Editar Evento</h2>
+      <form (ngSubmit)="guardarEdicion()">
+        <div>
+          <label for="fechaEvento">Fecha y Hora:</label>
+          <input type="datetime-local" id="fechaEvento" [(ngModel)]="eventoEditando.fechaEvento" name="fechaEvento" required>
+        </div>
+        <div>
+          <label for="ubicacionEvento">Ubicación:</label>
+          <input type="text" id="ubicacionEvento" [(ngModel)]="eventoEditando.ubicacionEvento" name="ubicacionEvento" required>
+        </div>
+        <div>
+          <label for="capacidadEvento">Capacidad:</label>
+          <input type="number" id="capacidadEvento" [(ngModel)]="eventoEditando.capacidadEvento" name="capacidadEvento" required>
+        </div>
+        <button type="submit">Guardar</button>
+        <button type="button" (click)="cancelarEdicion()">Cancelar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Botón para mostrar/ocultar el formulario -->
+  <button (click)="toggleFormulario()">Crear Nuevo Evento</button>
+
+  <!-- Formulario para crear un nuevo evento -->
+  <div *ngIf="mostrarFormulario">
+    <h2>Crear Nuevo Evento</h2>
+    <form (ngSubmit)="crearEvento()">
+      <div>
+        <label for="nombreEvento">Nombre:</label>
+        <input type="text" id="nombreEvento" [(ngModel)]="nuevoEvento.nombreEvento" name="nombreEvento" required>
+      </div>
+      <div>
+        <label for="descripcionEvento">Descripción:</label>
+        <textarea id="descripcionEvento" [(ngModel)]="nuevoEvento.descripcionEvento" name="descripcionEvento" required></textarea>
+      </div>
+      <div>
+        <label for="fechaEvento">Fecha y Hora:</label>
+        <input type="datetime-local" id="fechaEvento" [(ngModel)]="nuevoEvento.fechaEvento" name="fechaEvento" required>
+      </div>
+      <div>
+        <label for="ubicacionEvento">Ubicación:</label>
+        <input type="text" id="ubicacionEvento" [(ngModel)]="nuevoEvento.ubicacionEvento" name="ubicacionEvento" required>
+      </div>
+      <div>
+        <label for="capacidadEvento">Capacidad:</label>
+        <input type="number" id="capacidadEvento" [(ngModel)]="nuevoEvento.capacidadEvento" name="capacidadEvento" required>
+      </div>
+      <button type="submit">Crear Evento</button>
+      <button type="button" (click)="toggleFormulario()">Cancelar</button>
+    </form>
+  </div>
+</div>

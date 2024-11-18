@@ -1,0 +1,27 @@
+<div class="home-container">
+  <h1>Eventos Disponibles</h1>
+
+  <div *ngIf="eventos.length === 0">
+    <p>No hay eventos disponibles en este momento.</p>
+  </div>
+
+  <div *ngFor="let evento of eventos" class="evento-card">
+    <h2>{{ evento.nombreEvento }}</h2>
+    <p>{{ evento.descripcionEvento }}</p>
+    <p><strong>Fecha y Hora:</strong> {{ evento.fechaEvento | date: 'short' }}</p>
+    <p><strong>Ubicación:</strong> {{ evento.ubicacionEvento }}</p>
+    <p><strong>Capacidad:</strong> {{ evento.capacidadEvento }}</p>
+    <p><strong>Asistentes:</strong> {{ evento.asistentesEvento }}</p>
+    <p><strong>Creador:</strong> {{ evento.usuario.nombreUsuario}}</p>
+
+    <p *ngIf="evento.inscritoEvento; else noInscrito">
+      Estás inscrito en este evento.
+    </p>
+    <ng-template #noInscrito>
+      <p>No estás inscrito en este evento.</p>
+    </ng-template>
+
+    <button (click)="asignarseEvento(evento.idEvento)">Asignarse a este evento</button>
+
+  </div>
+</div>

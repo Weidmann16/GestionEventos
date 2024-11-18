@@ -1,0 +1,70 @@
+/* home.component.css */
+
+/* Contenedor principal */
+.home-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+/* Mensaje de no eventos */
+p {
+  text-align: center;
+  color: #7f8c8d;
+  font-size: 1.2rem;
+}
+
+/* Tarjeta de evento */
+.evento-card {
+  background-color: #ffffff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+  .evento-card:hover {
+    transform: translateY(-3px);
+  }
+
+  .evento-card h2 {
+    margin: 0 0 10px;
+    font-size: 1.8rem;
+    color: #2980b9;
+  }
+
+  .evento-card p {
+    margin: 5px 0;
+    color: #34495e;
+  }
+
+    .evento-card p strong {
+      color: #2c3e50;
+    }
+
+/* Botón para asignarse a un evento */
+button {
+  display: block;
+  padding: 10px 15px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #27ae60;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+  wid
