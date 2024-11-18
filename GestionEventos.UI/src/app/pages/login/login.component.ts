@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { AuthService } from '@/Services/auth/auth.service';
+import { AuthService } from '@/core/services/auth/auth.service';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-import { AuthVistaService } from '@/Services/authVista/auth-vista.service';
+import { AuthVistaService } from '@/core/services/authVista/auth-vista.service';
 
 @Component({
   selector: 'app-login',

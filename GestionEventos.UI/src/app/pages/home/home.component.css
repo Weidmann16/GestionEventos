@@ -67,4 +67,10 @@ button {
   cursor: pointer;
   transition: background-color 0.3s;
   margin-top: 10px;
-  wid
+  width: 100%;
+  text-align: center;
+}
+
+  button:hover {
+    background-color: #1e8449;
+  }

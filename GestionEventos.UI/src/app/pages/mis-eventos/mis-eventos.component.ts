@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { EventoService } from '@/Services/evento/evento.service';
-import { AuthVistaService } from '@/Services/authVista/auth-vista.service';
+import { EventoService } from '@/core/services/evento/evento.service';
+import { AuthVistaService } from '@/core/services/authVista/auth-vista.service';
 import { CookieService } from 'ngx-cookie-service';
 
 @Component({

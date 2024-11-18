@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { authGuard } from './auth.guard';
-import { loginGuard } from './login.guard';
-import { MisEventosComponent } from './mis-eventos/mis-eventos.component';
-import { EventosInscritosComponent } from './eventos-inscritos/eventos-inscritos.component';
+import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
+import { authGuard } from './core/guards/auth-guard/auth.guard';
+import { loginGuard } from './core/guards/login-guard/login.guard';
+import { MisEventosComponent } from './pages/mis-eventos/mis-eventos.component';
+import { EventosInscritosComponent } from './pages/eventos-inscritos/eventos-inscritos.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent, canActivate: [authGuard] },

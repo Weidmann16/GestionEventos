@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthVistaService } from '@/Services/authVista/auth-vista.service';
+import { AuthVistaService } from '@/core/services/authVista/auth-vista.service';
 
 @Component({
   selector: 'app-root',

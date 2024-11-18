@@ -1,6 +1,6 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
-import { AuthVistaService } from '@/Services/authVista/auth-vista.service';
+import { AuthVistaService } from '@/core/services/authVista/auth-vista.service';
 import { map, take } from 'rxjs/operators';
 
 export const loginGuard: CanActivateFn = (route, state) => {
