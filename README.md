@@ -29,7 +29,7 @@ Esta es una aplicación web para la gestión de eventos, desarrollada en Angular
 
 ### Requisitos Previos
 
-- [Node.js](https://nodejs.org/) (y npm)
+- [Node.js](https://nodejs.org/)
 - [Angular CLI](https://angular.io/cli)
 - [Visual Studio](https://visualstudio.microsoft.com/) o [Visual Studio Code](https://code.visualstudio.com/)
 - [.NET SDK](https://dotnet.microsoft.com/download)
@@ -53,6 +53,15 @@ Esta es una aplicación web para la gestión de eventos, desarrollada en Angular
      ```
      
 4. **Iniciar el Frontend (Angular) y API**
+
+ - Navega a la carpeta del proyecto Angular:
+     ```bash
+     cd gestion-eventos-ui
+     ```
+   - Instala las dependencias:
+     ```bash
+     npm install
+     ```
    - Navega a la carpeta del proyecto Angular e inicia el proyecto (Es necesario iniciar el front y la API al mismo tiempo):
      ```bash
      ng serve
